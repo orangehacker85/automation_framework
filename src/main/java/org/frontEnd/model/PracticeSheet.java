@@ -1,20 +1,47 @@
 package org.frontEnd.model;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import java.util.List;
 
 
 
 public class PracticeSheet {
     @Test
-    public void WebElAutomation() {
+    public void DropDowns() throws InterruptedException {
         System.setProperty("chromedriver", "/home/iwave85-e14/Documents/Courses/Automation/chromedriver-linux64");
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-//        Select dropdown = new Select(); //dropdown with select tag
+        WebElement staticDropdown=driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
+        Select dropdown = new Select(staticDropdown); //dropdown with select tag
+        dropdown.selectByIndex(3);
+        System.out.println(dropdown.getFirstSelectedOption().getText());
+//        driver.navigate().refresh();
+//        Thread.sleep(1000);
+        dropdown.selectByVisibleText("AED");
+        System.out.println(dropdown.getFirstSelectedOption().getText());
+        driver.findElement(By.xpath("//div[@id='divpaxinfo']")).click();
+        Thread.sleep(2000);
+        for(int i=1; i<5; i++) { driver.findElement(By.xpath("//span[@id='hrefIncAdt']")).click(); }
+        driver.findElement(By.xpath("//input[@id='btnclosepaxoption']")).click();
 
-
+        // dropdowns loaded based upon user actions are called dynamic dropdowns.
+        driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
+        // in case we're asked to avoid using indexes, we can use a parent-child relationship locator
+        driver.findElement(By.xpath("//span[@id='ctl00_mainContent_ddl_destinationStation1_CTXTaction']//a[@value='MAA']")).click();
+        driver.findElement((By.xpath("//input[@id='autosuggest']"))).sendKeys("aus");
+        Thread.sleep(3000);
+        List<WebElement> options= (List<WebElement>) driver.findElement(By.cssSelector("li[class='ui-menu-item'] a"));
+        for(WebElement option : options) {
+            if(option.getText().equalsIgnoreCase("Austria")) {
+                option.click();
+                break;
+            }
         }
+
+    }
 }
