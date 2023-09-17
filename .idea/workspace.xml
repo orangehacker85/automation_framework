@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf2fe513-e23a-47ad-b35f-8879b9c5523c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/frontEnd/model/PracticeSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/PracticeSheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/archetype-resources/src/test/java/PracticeSheet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/frontEnd/model/PracticeSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/frontEnd/model/PracticeSheet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -48,6 +52,49 @@
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
+  <component name="RunManager" selected="TestNG.PracticeSheet.WebElAutomation">
+    <configuration name="PracticeSheet" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.frontEnd.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.frontEnd.model" />
+      <option name="MAIN_CLASS_NAME" value="org.frontEnd.model.PracticeSheet" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PracticeSheet.WebElAutomation" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="automation_framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.frontEnd.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.frontEnd.model" />
+      <option name="MAIN_CLASS_NAME" value="org.frontEnd.model.PracticeSheet" />
+      <option name="METHOD_NAME" value="WebElAutomation" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.PracticeSheet.WebElAutomation" />
+        <item itemvalue="TestNG.PracticeSheet" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
