@@ -1,12 +1,13 @@
 package org.frontEnd.model;
 
+import java.util.List;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.util.List;
 
 
 
@@ -30,18 +31,31 @@ public class PracticeSheet {
         driver.findElement(By.xpath("//input[@id='btnclosepaxoption']")).click();
 
         // dropdowns loaded based upon user actions are called dynamic dropdowns.
-        driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
+//        driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
         // in case we're asked to avoid using indexes, we can use a parent-child relationship locator
-        driver.findElement(By.xpath("//span[@id='ctl00_mainContent_ddl_destinationStation1_CTXTaction']//a[@value='MAA']")).click();
+//        driver.findElement(By.xpath("//span[@id='ctl00_mainContent_ddl_destinationStation1_CTXTaction']//a[@value='MAA']")).click();
         driver.findElement((By.xpath("//input[@id='autosuggest']"))).sendKeys("aus");
         Thread.sleep(3000);
-        List<WebElement> options= (List<WebElement>) driver.findElement(By.cssSelector("li[class='ui-menu-item'] a"));
+        List<WebElement> options=driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
         for(WebElement option : options) {
             if(option.getText().equalsIgnoreCase("Austria")) {
                 option.click();
                 break;
             }
         }
+        driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_SeniorCitizenDiscount']")).click();
+        System.out.println(driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_SeniorCitizenDiscount']")).isSelected());
+        System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size()); // count the number of checkboxes
+
+        // assertions
+        Assert.assertTrue(driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_SeniorCitizenDiscount']")).isSelected());
+        Assert.assertEquals(driver.findElement(By.xpath("//div[@id='divpaxinfo']")).getText(), "5 Adult");
+    }
+
+    @Test
+    public void FunctionalTesting() {
 
     }
+
+
 }
